@@ -37,7 +37,9 @@ while True:
     promedio_ventas = total_ventas / cantidad_ventas
 
     #(SALIDA) se muestran los valores
-    print(f'Total de ventas realizadas{cantidad_ventas} con in monto de: {total_ventas}')
+    print(f'Total de ventas realizadas{cantidad_ventas} con un monto de: {total_ventas}')
+
+    # Validacion de existencias de ventas para mostrar se mayor, menor y promdedio de ventas
     if cantidad_ventas > 0:
         print(f'Venta mayor {venta_mayor}')
         print(f'Venta menor {venta_menor}')
