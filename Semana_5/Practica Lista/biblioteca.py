@@ -1,16 +1,11 @@
-# ===================================
-# GESTIÓN DE BIBLIOTECA
-# ===================================
 
 MAX_TITULOS = 20
 titulos = [""] * MAX_TITULOS       # Lista de títulos (vacía al inicio)
 ejemplares = [0] * MAX_TITULOS     # Lista de ejemplares
-cantidad_titulos = 0               # Contador real de libros cargados
+cantidad_titulos = 0               # Contador de libros cargados
 
 
-# -------------------------------
-# 1. Cargar títulos y ejemplares
-# -------------------------------
+# Cargar títulos y ejemplares
 def cargar_titulos():
     global cantidad_titulos
     while cantidad_titulos < MAX_TITULOS:
@@ -34,9 +29,7 @@ def cargar_titulos():
         cantidad_titulos += 1
 
 
-# -------------------------------
-# 2. Mostrar catálogo completo
-# -------------------------------
+# Mostrar catálogo completo
 def mostrar_catalogo():
     if cantidad_titulos == 0:
         print("Catálogo vacío.")
@@ -46,9 +39,7 @@ def mostrar_catalogo():
             print(f"{titulos[i]} → {ejemplares[i]} copias")
 
 
-# -------------------------------
-# 3. Consultar disponibilidad
-# -------------------------------
+# 3. Consultar por el titulo
 def consultar_disponibilidad():
     titulo = input("Ingrese el título a consultar: ")
     for i in range(cantidad_titulos):
@@ -58,9 +49,7 @@ def consultar_disponibilidad():
     print("Ese título no está en el catálogo.")
 
 
-# -------------------------------
-# 4. Listar títulos agotados
-# -------------------------------
+# Listar títulos agotados
 def listar_agotados():
     hay_agotados = False
     for i in range(cantidad_titulos):
@@ -72,10 +61,7 @@ def listar_agotados():
     if not hay_agotados:
         print("No hay títulos agotados.")
 
-
-# -------------------------------
-# 5. Agregar un nuevo título
-# -------------------------------
+# Agregar un nuevo título
 def agregar_titulo():
     global cantidad_titulos
     if cantidad_titulos >= MAX_TITULOS:
@@ -96,10 +82,7 @@ def agregar_titulo():
     cantidad_titulos += 1
     print(f"Título '{titulo}' agregado con {copias} ejemplares.")
 
-
-# -------------------------------
-# 6. Actualizar ejemplares
-# -------------------------------
+# Actualizar ejemplares
 def actualizar_ejemplares():
     titulo = input("Ingrese el título a actualizar: ")
     for i in range(cantidad_titulos):
@@ -121,10 +104,7 @@ def actualizar_ejemplares():
             return
     print("Ese título no está en el catálogo.")
 
-
-# -------------------------------
-# 7. Menú principal
-# -------------------------------
+# Menú principal
 def menu():
     while True:
         print("\n--- MENÚ ---")
@@ -156,8 +136,5 @@ def menu():
         else:
             print("Opción inválida.")
 
-
-# -------------------------------
 # Ejecución del programa
-# -------------------------------
 menu()
